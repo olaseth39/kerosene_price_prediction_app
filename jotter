@@ -1,0 +1,18 @@
+#form
+class InputForm(Form):
+     year = IntergerField('Year', [validators.DataRequired()])
+     month = StringField('Month', [validators.DataRequired()])
+if request.methods == 'POST' and form.validate():
+        #get the data
+        year = form.year.data
+        month = form.month.data
+
+values = [i for i in request.form.values()]
+    year = values[0]     #get the year
+    month = values[1]     #get the month
+    #print(int(v1))
+    
+    prediction = model.predict([[month, year]])
+    print(prediction)
+
+    #output = round(prediction[0], 2)

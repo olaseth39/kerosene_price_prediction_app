@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Kerosene Price Prediction</title>
+</head>
+    <title>Kerosene Price Prediction</title>
+    <link rel="stylesheet" href="/static/css/app.css">
+    <link rel="stylesheet" href="/static/css/googleapisfonts.css">
+<body>
+    <div class="img"></div>
+    <h3>Prediction of Nigerian Household Kerosene Price per Liter on Monthly and Yearly basis</h3>
+    
+    <form action="{{url_for('predict_kero_price')}}" method ="POST" class="form">
+        <h2>Year</h2>
+        <input class="area"  type="number" id="year" class="floatLabel" name="year" value="2015">
+
+        <h2>Month</h2>
+        <div>
+            <select class="location" name="month" id="month">
+            <option value="" disabled="disabled" selected="selected">Choose a Month</option>
+                <option>Jan</option>
+                <option>Feb</option>
+                <option>Mar</option>
+                <option>Apr</option>
+                <option>May</option>
+                <option>Jun</option>
+                <option>Jul</option>
+                <option>Aug</option>
+                <option>Sep</option>
+                <option>Oct</option>
+                <option>Nov</option>
+                <option>Dec</option>
+            </select>
+        </div>
+
+        <button class="submit" type="submit">Estimate Price</button>
+        <div id="uiEstimatedPrice" class="result"> {{predicted_price}}	<h2></h2> </div>
+    </form>
+</body>
+</html>
+
+
+
